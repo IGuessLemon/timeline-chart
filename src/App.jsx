@@ -25,9 +25,9 @@ export default function App() {
       
       <Toolbar />
       
-      <div className="flex-1 flex overflow-hidden">
+      <div className="flex-1 flex">
         <Sidebar />
-        <div className="flex-1 timeline-canvas-container">
+        <div className="flex-1 timeline-canvas-container overflow-hidden">
           <TimelineCanvas />
         </div>
       </div>
