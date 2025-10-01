@@ -15,7 +15,6 @@ A powerful and interactive timeline chart application built with React and Vite.
 
 ### Visualization
 - **Zoom Controls**: Zoom in/out to see more or less detail (50% to 300%)
-- **Responsive Design**: Works on desktop, tablet, and mobile devices
 - **Grid View**: Clear grid lines for better time alignment
 - **Task Selection**: Click to select and highlight tasks
 
@@ -122,13 +121,6 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
 })
 ```
-
-## 📱 Mobile Support
-
-The application is fully responsive and works on mobile devices:
-- Touch support for dragging and resizing tasks
-- Responsive toolbar that wraps on smaller screens
-- Optimized layout for portrait and landscape modes
 
 ## ⚠️ Known Limitations
 
