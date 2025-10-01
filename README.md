@@ -2,7 +2,6 @@
 
 A powerful and interactive timeline chart application built with React and Vite. Plan, visualize, and manage your project timelines with ease.
 
-![Timeline Chart Manager](https://via.placeholder.com/800x400?text=Timeline+Chart+Manager)
 
 ## 🚀 Features
 
@@ -16,7 +15,9 @@ A powerful and interactive timeline chart application built with React and Vite.
 
 ### Visualization
 - **Zoom Controls**: Zoom in/out to see more or less detail (50% to 300%)
+- **Responsive Design**: Works on desktop, tablet, and mobile devices
 - **Grid View**: Clear grid lines for better time alignment
+- **Task Selection**: Click to select and highlight tasks
 
 ### Data Management
 - **JSON Export**: Save your project as a JSON file
@@ -27,7 +28,7 @@ A powerful and interactive timeline chart application built with React and Vite.
 
 ### Prerequisites
 - Node.js (version 14 or higher)
-- npm or yarn package manager
+- npm package manager
 
 ### Step 1: Clone or Download
 Download the project files to your computer.
@@ -39,11 +40,6 @@ Open your terminal in the project folder and run:
 npm install
 ```
 
-Or if you use yarn:
-
-```bash
-yarn install
-```
 
 ### Step 3: Run the Application
 Start the development server:
@@ -52,11 +48,6 @@ Start the development server:
 npm run dev
 ```
 
-Or with yarn:
-
-```bash
-yarn dev
-```
 
 The application will open in your browser at `http://localhost:5173`
 
@@ -67,26 +58,21 @@ To create a production build:
 npm run build
 ```
 
-Or with yarn:
-
-```bash
-yarn build
-```
 
 ## 📚 Libraries Used
 
 This project uses the following libraries:
 
 ### Core Framework
-- **React** (^18.0.0): JavaScript library for building user interfaces
+- **React**: JavaScript library for building user interfaces
 - **Vite**: Fast build tool and development server
 
 ### State Management
-- **Zustand** (^4.0.0): Lightweight state management solution
+- **Zustand**: Lightweight state management solution
 
 ### UI Components
-- **Lucide React** (^0.263.1): Icon library for React
-- **Tailwind CSS** (^3.0.0): Utility-first CSS framework
+- **Lucide React**: Icon library for React
+- **Tailwind CSS**: Utility-first CSS framework
 
 ## 🎯 How to Use
 
@@ -122,49 +108,18 @@ This project uses the following libraries:
 - **Import JSON**: Click "Import JSON" and select a previously saved `.json` file
 - **Download PNG**: Click "Download PNG" to export the timeline as an image
 
-## 🖥️ Project Structure
 
-```
-timeline-chart-manager/
-├── src/
-│   ├── App.jsx              # Main application component
-│   ├── main.jsx             # Application entry point
-│   └── index.css            # Global styles
-├── public/                  # Static assets
-├── index.html               # HTML template
-├── package.json             # Project dependencies
-├── vite.config.js           # Vite configuration
-├── tailwind.config.js       # Tailwind CSS configuration
-└── README.md                # This file
-```
-
-## 🔧 Configuration
-
-### Tailwind CSS Setup
-The project uses Tailwind CSS for styling. The configuration is in `tailwind.config.js`:
-
-```javascript
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
-
-### Vite Configuration
+### Vite and Tailwind Configuration
 Vite is configured in `vite.config.js`:
 
 ```javascript
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 
+// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
 })
 ```
 
@@ -188,9 +143,6 @@ Contributions are welcome! Feel free to:
 - Suggest new features
 - Submit pull requests
 
-## 📄 License
-
-This project is open source and available under the MIT License.
 
 ## 💡 Tips & Tricks
 
@@ -222,6 +174,31 @@ If you encounter any issues or have questions:
 1. Check the troubleshooting section above
 2. Review the How to Use section
 3. Open an issue on the project repository
+
+## 👨‍💻 About the Developer
+
+This project was developed by **Mahbub Hasan**, a skilled web developer specializing in modern JavaScript frameworks and interactive web applications.
+
+### Get in Touch
+
+Are you looking for a talented web developer to bring your ideas to life? I'm available for freelance projects and full-time opportunities!
+
+- **Email**: [bnlimon0@gmail.com](mailto:bnlimon0@gmail.com)
+- **LinkedIn**: [Mahbub Hasan](https://www.linkedin.com/in/mahbub-hasan-634766378/)
+
+### What I Can Do For You
+
+- 🚀 Build modern, responsive web applications
+- ⚛️ Expert in React, Next.js, Nest.js, Express and cutting-edge JavaScript frameworks
+- 🎨 Create beautiful UIs with Tailwind CSS and modern design principles
+- 📊 Develop interactive data visualization and management tools
+- 🔧 Implement efficient state management solutions
+- 📱 Ensure mobile-first, responsive designs
+- 🎯 Deliver clean, maintainable, and well-documented code
+
+Whether you need a custom web application, an interactive dashboard, or a complete website redesign, I'm here to help turn your vision into reality.
+
+**Let's build something amazing together!**
 
 ---
 
