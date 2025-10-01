@@ -1,11 +1,33 @@
 import useTimelineStore from "../TimeLineStore";
-import { Trash2, ChevronUp, ChevronDown, Palette } from 'lucide-react';
+import { Trash2, ChevronUp, ChevronDown } from 'lucide-react';
 
-export default function Sidebar() {
+export default function Sidebar({ width, setWidth }) {
     const { tasks, selectedTask, updateTask, deleteTask, moveTaskUp, moveTaskDown } = useTimelineStore();
 
+    const startResizing = (e) => {
+        e.preventDefault();
+        const startX = e.clientX;
+        const startWidth = width;
+
+        const doDrag = (e) => {
+            const newWidth = Math.max(150, startWidth + (e.clientX - startX)); // min 150px
+            setWidth(newWidth);
+        };
+
+        const stopDrag = () => {
+            document.removeEventListener("mousemove", doDrag);
+            document.removeEventListener("mouseup", stopDrag);
+        };
+
+        document.addEventListener("mousemove", doDrag);
+        document.addEventListener("mouseup", stopDrag);
+    };
+
     return (
-        <div className="w-64 bg-gray-50 border-r border-gray-300 overflow-y-auto">
+        <div
+            className="bg-gray-50 border-r border-gray-300 overflow-y-auto relative"
+            style={{ width }}
+        >
             <div className="sticky top-0 bg-gray-100 p-4 border-b border-gray-300 font-bold">
                 Tasks
             </div>
@@ -17,16 +39,13 @@ export default function Sidebar() {
                 >
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2 flex-1 min-w-0">
-                            <div className="flex items-center gap-2">
-                                {/* <Palette className="w-5 h-5 text-gray-600" /> */}
-                                <input
-                                    type="color"
-                                    value={task.color}
-                                    onChange={(e) => updateTask(task.id, { color: e.target.value })}
-                                    className="w-8 h-6 rounded cursor-pointer border border-gray-300"
-                                    title="Click to change color"
-                                />
-                            </div>
+                            <input
+                                type="color"
+                                value={task.color}
+                                onChange={(e) => updateTask(task.id, { color: e.target.value })}
+                                className="w-8 h-6 rounded cursor-pointer border border-gray-300"
+                                title="Click to change color"
+                            />
                             <input
                                 type="text"
                                 value={task.name}
@@ -59,6 +78,12 @@ export default function Sidebar() {
                     </div>
                 </div>
             ))}
+
+            {/* Resizer handle */}
+            <div
+                onMouseDown={startResizing}
+                className="absolute top-0 right-0 w-2 h-full cursor-col-resize bg-transparent hover:bg-gray-300"
+            />
         </div>
     );
 };
