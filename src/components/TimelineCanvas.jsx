@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import TaskBar from "./TaskBar";
 
 export default function TimelineCanvas() {
-    const { tasks, totalUnits, timeUnit, zoom, panX, panY, updateTask, setSelectedTask, selectedTask } = useTimelineStore();
+    const { tasks, totalUnits, timeUnit, zoom, updateTask, setSelectedTask, selectedTask } = useTimelineStore();
     const canvasRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [isResizing, setIsResizing] = useState(false);

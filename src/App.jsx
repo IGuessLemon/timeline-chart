@@ -20,7 +20,7 @@ export default function App() {
     <div className="h-screen flex flex-col bg-white">
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4">
         <h1 className="text-2xl font-bold">Timeline Chart Manager</h1>
-        <p className="text-sm opacity-90">Plan and visualize your project timeline</p>
+        <p className="text-sm opacity-90">created and maintained by <a style={{textDecoration: "underline"}} href='mailto:bnlimon0@gmail.com'>Mahbub Hasan</a></p>
       </div>
       
       <Toolbar />

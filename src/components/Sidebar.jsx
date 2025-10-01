@@ -1,5 +1,5 @@
 import useTimelineStore from "../TimeLineStore";
-import { Trash2, ChevronUp, ChevronDown } from 'lucide-react';
+import { Trash2, ChevronUp, ChevronDown, Palette } from 'lucide-react';
 
 export default function Sidebar() {
     const { tasks, selectedTask, updateTask, deleteTask, moveTaskUp, moveTaskDown } = useTimelineStore();
@@ -17,12 +17,16 @@ export default function Sidebar() {
                 >
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2 flex-1 min-w-0">
-                            <input
-                                type="color"
-                                value={task.color}
-                                onChange={(e) => updateTask(task.id, { color: e.target.value })}
-                                className="w-6 h-6 rounded cursor-pointer"
-                            />
+                            <div className="flex items-center gap-2">
+                                {/* <Palette className="w-5 h-5 text-gray-600" /> */}
+                                <input
+                                    type="color"
+                                    value={task.color}
+                                    onChange={(e) => updateTask(task.id, { color: e.target.value })}
+                                    className="w-8 h-6 rounded cursor-pointer border border-gray-300"
+                                    title="Click to change color"
+                                />
+                            </div>
                             <input
                                 type="text"
                                 value={task.name}
